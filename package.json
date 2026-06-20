@@ -1,0 +1,37 @@
+{
+  "name": "pi-provider-factory",
+  "version": "0.1.0",
+  "description": "Oh My Pi provider extension for Factory.ai Droid OAuth and Factory LLM gateway models.",
+  "type": "module",
+  "extensions": [
+    "./src/index.ts"
+  ],
+  "keywords": [
+    "oh-my-pi",
+    "omp",
+    "factory-ai",
+    "factory-droid",
+    "factory-provider",
+    "claude-opus",
+    "gpt-5",
+    "codex",
+    "llm-gateway",
+    "ai-coding-agent"
+  ],
+  "omp": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@oh-my-pi/pi-coding-agent": "^16.1.0",
+    "@oh-my-pi/pi-ai": "^16.1.0",
+    "@oh-my-pi/pi-catalog": "^16.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@oh-my-pi/pi-coding-agent": "^16.1.7",
+    "@oh-my-pi/pi-ai": "^16.1.7",
+    "@oh-my-pi/pi-catalog": "^16.1.7"
+  }
+}
