@@ -4,7 +4,9 @@
     "moduleResolution": "Bundler",
     "target": "ES2022",
     "strict": true,
-    "types": [],
+    "types": [
+      "node"
+    ],
     "skipLibCheck": true
   },
   "include": [

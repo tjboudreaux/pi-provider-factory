@@ -1,22 +1,43 @@
 {
   "name": "pi-provider-factory",
   "version": "0.1.0",
-  "description": "Oh My Pi provider extension for Factory.ai Droid OAuth and Factory LLM gateway models.",
+  "description": "Factory.ai provider extension for Oh My Pi (omp) with Droid OAuth and Factory LLM gateway routing.",
   "type": "module",
   "extensions": [
     "./src/index.ts"
   ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjboudreaux/pi-provider-factory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tjboudreaux/pi-provider-factory/issues"
+  },
+  "homepage": "https://github.com/tjboudreaux/pi-provider-factory#readme",
   "keywords": [
     "oh-my-pi",
+    "oh-my-pi-provider",
     "omp",
+    "omp-provider",
     "factory-ai",
     "factory-droid",
     "factory-provider",
+    "factory-llm-gateway",
     "claude-opus",
+    "claude-sonnet",
+    "anthropic",
     "gpt-5",
     "codex",
+    "openai-responses",
+    "glm",
+    "kimi",
+    "deepseek",
+    "minimax",
+    "nemotron",
     "llm-gateway",
-    "ai-coding-agent"
+    "ai-coding-agent",
+    "typescript"
   ],
   "omp": {
     "extensions": [
@@ -28,8 +49,12 @@
     "@oh-my-pi/pi-ai": "^16.1.0",
     "@oh-my-pi/pi-catalog": "^16.1.0"
   },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
   "devDependencies": {
     "typescript": "^5",
+    "@types/node": "^24",
     "@oh-my-pi/pi-coding-agent": "^16.1.7",
     "@oh-my-pi/pi-ai": "^16.1.7",
     "@oh-my-pi/pi-catalog": "^16.1.7"
