@@ -2,7 +2,7 @@
 
 **Pi Provider Factory is an Oh My Pi provider extension for using Factory.ai Droid models from `omp`, including Claude Opus, Claude Sonnet, GPT, Codex, GLM, Kimi, DeepSeek, MiniMax, and Nemotron models through Factory's authenticated LLM gateway.**
 
-Last updated: 2026-06-20
+Last updated: 2026-06-23
 
 ## What this package does
 
@@ -18,7 +18,7 @@ Use it when you want:
 
 ## Supported models
 
-The extension currently exposes 24 Factory models.
+The extension ships a 25-model curated fallback catalog and refreshes Factory's public model docs for additional supported model IDs.
 
 ### Claude and Anthropic-family models
 
@@ -53,6 +53,7 @@ These models route through Factory's OpenAI Responses-compatible gateway:
 
 These models route through Factory's OpenAI chat-completions-compatible gateway:
 
+- `glm-5.2`
 - `glm-5.1`
 - `kimi-k2.7-code`
 - `deepseek-v4-pro`
@@ -115,6 +116,14 @@ Confirm the provider is discoverable:
 ```zsh
 omp models find factory
 ```
+
+Force a fresh Factory catalog fetch at any time:
+
+```zsh
+omp models refresh factory
+```
+
+This pulls Factory's public model docs for newly supported model IDs and falls back to the built-in catalog if Factory's docs endpoint is unavailable.
 
 ## Authentication
 
@@ -187,7 +196,7 @@ omp -p --model factory/gpt-5.5 --no-tools "summarize this repo in one sentence"
 Run a Factory Core model:
 
 ```zsh
-omp -p --model factory/glm-5.1 --no-tools "write a concise TypeScript function"
+omp -p --model factory/glm-5.2 --no-tools "write a concise TypeScript function"
 ```
 
 ## Implementation notes
@@ -280,7 +289,7 @@ No. Requests go to Factory's gateway first. Factory then routes each request to 
 
 ### Which endpoint do Factory Core models use?
 
-Factory Core and open-weight chat models such as `glm-5.1`, `kimi-k2.7-code`, and `deepseek-v4-pro` use `${apiEndpoint}/api/llm/o/v1/chat/completions`.
+Factory Core and open-weight chat models such as `glm-5.2`, `glm-5.1`, `kimi-k2.7-code`, and `deepseek-v4-pro` use `${apiEndpoint}/api/llm/o/v1/chat/completions`.
 
 ## Development
 

@@ -8,7 +8,7 @@ export type FactoryModelFamily =
   | "openai-completions"
   | "unsupported";
 
-type FactoryModelInput = {
+export type FactoryModelInput = {
   id: string;
   name: string;
   reasoning: boolean;
@@ -17,7 +17,7 @@ type FactoryModelInput = {
   maxTokens: number;
 };
 
-function factoryModel(config: FactoryModelInput): ProviderModelConfig {
+export function factoryModel(config: FactoryModelInput): ProviderModelConfig {
   return {
     id: config.id,
     name: config.name,
@@ -186,6 +186,14 @@ export const FACTORY_MODELS: ProviderModelConfig[] = [
     reasoning: true,
     input: ["text", "image"],
     contextWindow: 400000,
+    maxTokens: 128000,
+  }),
+  factoryModel({
+    id: "glm-5.2",
+    name: "GLM 5.2 (Factory Core)",
+    reasoning: true,
+    input: ["text"],
+    contextWindow: 1000000,
     maxTokens: 128000,
   }),
   factoryModel({
